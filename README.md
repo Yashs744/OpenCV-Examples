@@ -81,7 +81,7 @@ python (or python3) --image_1 "my_images/TG.jpg" --image_2 "my_images/TokyoGhoul
 - Point Operators (or Point Processes) is one of the Image Processing method where each pixel is manipulated independently from it's neighboring pixels. Formula:<br>
   <p align="center">
     <img src="https://latex.codecogs.com/gif.latex?%5Cinline%20%5Cdpi%7B150%7D%20%5Cfn_cs%20g%28x%29%20%3D%20%5Calpha%20*%20f%28x%29%20&plus;%20%5Cbeta" alt="equation"/></p>
-  where _alpha_ and _beta_ are used to control contrast and brightness respectively.
+  where <i>alpha</i> and <i>beta</i> are used to control contrast and brightness respectively.
 
 ### Methods Used:
   - cv2.convertScaleAbs()
@@ -91,6 +91,12 @@ python (or python3) --image_1 "my_images/TG.jpg" --image_2 "my_images/TokyoGhoul
 ![Image](https://github.com/Yashs744/OpenCV-Examples/blob/master/my_images/Output/result_6.png)
 
 ### 7. Image Processing: Gamma Correction (Example 7)
+
+- Gamma Correction is a non-linear tranformation which is used to remove the non-linear mapping b/w input radiance and quantized pixel values. Reference: [Computer Vision Algorithms and Applications by Richard Szeliski](http://szeliski.org/Book/)
+
+<p align="center">
+  <img src="https://latex.codecogs.com/gif.latex?%5Cinline%20%5Cdpi%7B200%7D%20%5Clarge%20g%28x%29%20%3D%20%5Cleft%20%28%20%5Cfrac%7Bf%28x%29%7D%7B255%7D%20%5Cright%20%29%5E%7B%5Cgamma%20%7D%20*%20255" alt="Formula">
+</p>
 
 ### Methods Used:
   - NumPy Array
