@@ -119,6 +119,49 @@ python (or python3) --image_1 "my_images/TG.jpg" --image_2 "my_images/TokyoGhoul
 ![Image](https://github.com/Yashs744/OpenCV-Examples/blob/master/my_images/Output/result_8(1).png)
 ![Image](https://github.com/Yashs744/OpenCV-Examples/blob/master/my_images/Output/result_8(2).png)
 
+### 9. Image Processing: Smoothing (or Bluring) an Image using Filters.
+
+Smoothing or Bluring of an Image is a common task in Image Processing which is performed to reduce the noise from the image using filters. <br>
+The most common type of filter is Linear Filter where output pixel's value is calculated using the weighted sum of the input pixel value.
+		
+<p align="center">
+    <img src = "https://latex.codecogs.com/gif.latex?%5Cdpi%7B150%7D%20g%28i%2C%20j%29%20%3D%20%5Csum_%7Bk%2C%20l%7D%20f%28i%20&plus;%20k%2C%20j%20&plus;%20l%29h%28k%2C%20l%29" />
+</p>
+
+where, ![h(k,l)](https://latex.codecogs.com/gif.latex?%5Cinline%20%5Cdpi%7B120%7D%20h%28k%2C%20l%29) is a kernel which is nothing but the filter coefficients.
+
+#### Types of Filters:
+  - [Normalized Box Filter](https://en.wikipedia.org/wiki/Box_blur)
+
+    ![box_filter](https://latex.codecogs.com/gif.latex?%5Cinline%20%5Cdpi%7B150%7D%20%5Cfn_cm%20%5Clarge%20K%20%3D%20%5Cfrac%7B1%7D%7BK_%7Bwidth%7D%20*%20K_%7Bheight%7D%7D%5Cbegin%7Bbmatrix%7D%201%26%201%26%20...%26%201%5C%5C%201%26%201%26%20...%26%201%5C%5C%20.%26%20.%26%20...%26%20.%5C%5C%20.%26%20.%26%20...%26%20.%5C%5C%201%26%201%26%201%26%201%20%5Cend%7Bbmatrix%7D)
+
+    
+    Here, each output pixel is the mean of the kernel neighbours. One such filter is _Box Blur_ or _Box Linear Filter_.
+    
+    ![box_blur](https://latex.codecogs.com/gif.latex?%5Cinline%20%5Cdpi%7B150%7D%20%5Cfn_cm%20%5Clarge%20K%20%3D%20%5Cfrac%7B1%7D%7B9%7D%5Cbegin%7Bbmatrix%7D%201%26%201%26%201%5C%5C%201%26%201%26%201%5C%5C%201%26%201%26%201%20%5Cend%7Bbmatrix%7D)
+    
+  - [Gaussian Filter](https://en.wikipedia.org/wiki/Gaussian_filter)<br>
+    The Gaussian Filter works by convolving each pixel in the input image with a **_Gaussian Function_** and then summing them up together.
+    
+    [Gaussian Function](https://en.wikipedia.org/wiki/Gaussian_function):<br>
+      ![1d](https://latex.codecogs.com/gif.latex?%5Cinline%20%5Clarge%20g%28x%29%20%3D%20%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%5Csigma%5E%7B2%7D%7D%7De%5E%7B-%5Cfrac%7Bx%5E%7B2%7D%7D%7B2%5Csigma%5E%7B2%7D%7D%7D) and 
+      ![2D](https://latex.codecogs.com/gif.latex?%5Cinline%20%5Clarge%20g%28x%29%20%3D%20%5Cfrac%7B1%7D%7B2%5Cpi%5Csigma%5E%7B2%7D%7De%5E%7B-%5Cfrac%7Bx%5E%7B2%7D%20&plus;%20y%5E%7B2%7D%7D%7B2%5Csigma%5E%7B2%7D%7D%7D)
+      
+  - [Median Filter](https://en.wikipedia.org/wiki/Median_filter)<br?
+    It works by traversing through each pixel in the input image and replacing the pixel with the median of its neighbouting pixels.
+    
+  - [Bilateral Filter](https://en.wikipedia.org/wiki/Bilateral_filter)<br>
+    It is an non-linear, edge-preserving and noise reducing filter i.e apart from reducing the noise from the image it also preserves the edges of the image i.e doesnot smooth out the edges rather replaces the intensity of each pixel with a weighted average of intensity value from the nearby pixels.
+    
+### Methods Used:
+  - cv2.blur()
+  - cv2.GaussianBlur()
+  - cv2.medianBlur()
+  - cv2.bilateralFilter()
+  
+### Output:
+  ![output](https://github.com/Yashs744/OpenCV-Examples/blob/master/my_images/Output/result_9.png)
+
 ## Execution
 ```shell
 python (or python3) Ex1(or 2, 3, 4, 5, 6, 7, 8).py
