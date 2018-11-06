@@ -169,10 +169,10 @@ Morphological Image Processing is a collection of non-linear operations related 
 Morphological Operatations uses an <i>Structuring Element</i> which is nothing but a small binary image (matrix) of pixels each with a value of 0 or 1. This Structuing Element _(s)_ is applied to an input image _(f)_ to get a output _(g)_.
 
 The two most common Morphological Operations are:
-- Dilation
+- **Dilation**
 	The Operation consist of colvolving an image (f) with some structuring element (s). The Structuring Element (s) has a defined anchor point (or origin) which is usually at the center. As, (s) moves over the image (f), the maximum pixel overlapped by (s) is computed and the image pixel value is replaced by this maximum value. This operation _grows_ the bright region in the image.
 	  	  
-- Erosion
+- **Erosion**
 	Erosion is in a way opposite of Dilation as it calculates the minimum over the area of the given structuring element (s). It _shrinks_ the bright region in the image.
 	
 ### Methods Used:
@@ -184,20 +184,20 @@ The two most common Morphological Operations are:
 ### Output:
 
    **_Structuring Element (s)_**: 
-   	- **Shape**: cv2.MORPH_RECT
-	- **Size**: (3, 3)
+   - **Shape**: cv2.MORPH_RECT
+   - **Size**: (3, 3)
    
    ![result_10(rect)](https://github.com/Yashs744/OpenCV-Examples/blob/master/my_images/result_10(rect).png)
    
    **_Structuring Element (s)_**: 
-   	- **Shape**: cv2.MORPH_CROSS 
-	- **Size**: (3, 3)
+   - **Shape**: cv2.MORPH_CROSS 
+   - **Size**: (3, 3)
    
    ![result_10(rect)](https://github.com/Yashs744/OpenCV-Examples/blob/master/my_images/result_10(cross).png)
    
    **_Structuring Element (s)_**: 
-   	- **Shape**: cv2.MORPH_ELLIPSE
-	- **Size**: (3, 3)
+   - **Shape**: cv2.MORPH_ELLIPSE
+   - **Size**: (3, 3)
    
    ![result_10(rect)](https://github.com/Yashs744/OpenCV-Examples/blob/master/my_images/result_10(ellipse).png)
    
